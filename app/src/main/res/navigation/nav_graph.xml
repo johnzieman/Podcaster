@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splash">
 
+    <fragment
+        android:id="@+id/splash"
+        android:name="com.johnzieman.podcaster.ui.Splash"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splash_to_mainScreen"
+            app:destination="@id/mainScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainScreen"
+        android:name="com.johnzieman.podcaster.ui.MainScreen"
+        android:label="fragment_main_screen"
+        tools:layout="@layout/fragment_main_screen" >
+        <action
+            android:id="@+id/action_mainScreen_to_savedEpisodes"
+            app:destination="@id/savedEpisodes" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedEpisodes"
+        android:name="com.johnzieman.podcaster.ui.SavedEpisodes"
+        android:label="fragment_saved_episodes"
+        tools:layout="@layout/fragment_saved_episodes" >
+        <action
+            android:id="@+id/action_savedEpisodes_to_mainScreen"
+            app:destination="@id/mainScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedPodcasts"
+        android:name="com.johnzieman.podcaster.ui.SavedPodcasts"
+        android:label="fragment_saved_podcasts"
+        tools:layout="@layout/fragment_saved_podcasts" >
+        <action
+            android:id="@+id/action_savedPodcasts_to_mainScreen"
+            app:destination="@id/mainScreen" />
+        <action
+            android:id="@+id/action_savedPodcasts_to_mainScreen2"
+            app:destination="@id/mainScreen" />
+    </fragment>
 </navigation>
